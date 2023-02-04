@@ -1,0 +1,96 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+article,
+dl,
+dd,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ul, 
+li {
+    list-style: none;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    font-family: 'Epilogue', sans-serif;
+    line-height: 1.5;
+    color: $almostBlack;
+}
+
+a {
+    text-decoration: none;
+}
+
+img, picture {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1 {
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.hide-for-mobile {
+  
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(xlarge) {
+    display: none;
+  }
+}
+
+.btn {
+  display: inline-block;
+  border: 0.09375rem solid $mediumGray;
+  border-radius: 0.7rem;
+  padding: 5px 20px;
+  transition: .3s ease-in-out;
+
+  &:hover {
+      border-color: $almostBlack;
+  }
+}
+
+.btn.dark {
+  background-color: $almostBlack;
+  color: $almostWhite;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  font-weight: 500;
+
+  &:hover {
+    color: $almostBlack;
+    background-color: $almostWhite;
+    border: 0.09375rem solid $almostBlack;
+  }
+}

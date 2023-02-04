@@ -1,0 +1,88 @@
+.hero {
+    margin-bottom: 3rem;
+
+    @include breakpoint-up(xlarge) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: auto;
+        gap: 2rem;
+        width: 90%;
+        max-width: 1000px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    &__image {
+        margin-bottom: 2rem;
+        order: 1;
+    }
+
+    &__description {
+        padding-right: 1rem;
+        padding-left: 1rem;
+        text-align: center;
+
+        @include breakpoint-up(medium) {
+            padding-right: 3rem;
+            padding-left: 3rem;
+        }
+
+        @include breakpoint-up(xlarge) {
+            text-align: left;
+            align-self: center;
+            padding: 0;
+        }
+    }
+
+    &__title {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+
+        @include breakpoint-up(medium) {
+            font-size: 2rem;
+        }
+
+        @include breakpoint-up(xlarge) {
+            font-size: 3rem;
+        }
+
+        @include breakpoint-up(xxlarge) {
+            font-size: 4rem;
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__text {
+        font-size: 0.875rem;
+        color: $mediumGray;
+        margin-bottom: 1rem;
+
+        @include breakpoint-up(medium) {
+            font-size: 1rem;
+        }
+
+        @include breakpoint-up(xxlarge) {
+            font-size: 1.125rem;
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__btn {
+        margin-bottom: 2rem;
+
+        @include breakpoint-up(xxlarge) {
+            font-size: 1.125rem;
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__clients {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            width: 3.5rem;
+        }
+    }
+}

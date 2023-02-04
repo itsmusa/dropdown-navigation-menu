@@ -1,0 +1,236 @@
+.header {
+    margin-bottom: 1rem;
+
+    @include breakpoint-up(xlarge) {
+        margin-bottom: 2.5em;
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $almostBlack;
+    visibility: hidden;
+    transform: scale(0.1);
+    opacity: 0.1;
+    pointer-events: none;
+    transition: .3s ease-in-out;
+    
+    &.open {
+        visibility: visible;
+        transform: scale(1);
+        opacity: 0.65;
+        pointer-events: all;
+    }
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1rem;
+
+    @include breakpoint-up(xlarge) {
+        padding-top: 2rem;
+        gap: 2rem;   
+    }
+
+    @include breakpoint-up(xxlarge) {
+        gap: 4rem;
+    }
+
+    &__menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 350px;
+        height: 100vh;
+        display: grid;
+        grid-auto-rows: min-content;
+        background-color: $almostWhite;
+        padding: 1rem;
+        transition: .35s ease-in-out;
+
+        &.open {
+            right: 0;
+        }
+
+        @include breakpoint-up(xlarge) {
+            position: static;
+            width: fit-content;
+            max-width: none;
+            height: auto;
+            background: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-grow: 1;
+        }
+    }
+
+    &__open {
+        cursor: pointer;
+        width: fit-content;
+    }
+
+    &__close {
+        cursor: pointer;
+        width: fit-content;
+        justify-self: end;
+        align-self: start;
+    }
+
+    &__list {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        align-self: start;
+
+        @include breakpoint-up(xlarge) {
+            display: flex;
+            align-items: center;
+            margin: 0.35rem 0 0 0;
+        }
+    }
+
+    &__item {
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+
+            @include breakpoint-up(xlarge) {
+                margin-bottom: 0;
+            }
+        }
+
+        @include breakpoint-up(xlarge) {
+            margin-bottom: 0;
+            margin-left: 1rem;
+
+            &:last-child {
+                margin-left: 2rem;
+            }
+        }
+
+    }
+
+    &__link {
+        font-size: 1rem;
+        color: $mediumGray;
+        transition: .3s ease-in-out;
+
+        &:hover {
+            color: $almostBlack;
+        }
+    }
+
+    &__btns {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+
+        @include breakpoint-up(xlarge) {
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+            // gap: 0;
+        }
+    }
+}
+
+.dropdown {
+    width: fit-content;
+
+    @include breakpoint-up(xlarge) {
+        position: relative;
+
+        &:hover &__list {
+            visibility: visible;
+            height: auto;
+        }
+    }
+
+    &__btn {
+        background: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    &__list {
+        padding-left: 1.5rem;
+        height: 0;
+        visibility: hidden;
+
+        @include breakpoint-up(xlarge) {
+            position: absolute;
+            top: 2.5rem;
+            right: 0;
+            background-color: $almostWhite;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0.25px 0.25px 30px hsl(0, 0%, 8%, 0.2);
+        }
+    }
+
+    &.open {
+        width: auto;
+
+        @include breakpoint-up(xlarge) {
+            width: fit-content;
+        }
+    }
+
+    &.open &__list {
+        height: auto;
+        visibility: visible;
+    }
+
+    &.open &__btn {
+        margin-bottom: 0.75rem;
+
+        @include breakpoint-up(xlarge) {
+            margin-bottom: 0;
+        }
+    }
+
+    // &:hover {
+    //     width: auto;
+    // }
+
+    // &:hover &__list {
+    //     visibility: visible;
+    //     height: auto;
+    // }
+
+    // &:hover &__btn {
+    //     margin-bottom: 0.75rem;
+    // }
+
+    &__item {
+
+        &:not(:last-child) {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &__link {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: $mediumGray;
+    }
+}
