@@ -70,8 +70,6 @@ In future projects I want to create a layout that is responsive without using ma
 
 - Website - [Musa Magwaza](https://www.github.com/itsmusa)
 - Frontend Mentor - [@itsmusa](https://www.frontendmentor.io/profile/itsmusa)
-- Twitter - [@flawedgoat](https://www.twitter.com/flawedgoat)
-
 
 ## Acknowledgments
 
